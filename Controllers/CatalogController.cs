@@ -77,18 +77,18 @@ namespace server.Controllers
 
 
         #region category api
-        [HttpGet]
-        [Route("category/getall")]
-        public async Task<ActionResult<ResponseDto>> GetAllCategories()
-        {
-            ResponseDto response = new ResponseDto();
+        //[HttpGet]
+        //[Route("category/getall")]
+        //public async Task<ActionResult<ResponseDto>> GetAllCategories()
+        //{
+        //    ResponseDto response = new ResponseDto();
 
-            IEnumerable<Category> categories = await catalogService.GetAllCategery();
+        //    IEnumerable<Category> categories = await catalogService.GetAllCategery();
 
-            response.Data =mapper.Map<IEnumerable<CategoryResDto>>(categories);
+        //    response.Data =mapper.Map<IEnumerable<CategoryResDto>>(categories);
 
-            return Ok(response);
-        }
+        //    return Ok(response);
+        //}
 
         [HttpPost]
         [Route("category/create")]
@@ -114,18 +114,18 @@ namespace server.Controllers
 
 
         #region Brand api
-        [HttpGet]
-        [Route("brand/getall")]
-        public async Task<ActionResult<ResponseDto>> GetAllBrands()
-        {
-            ResponseDto response = new ResponseDto();
+        //[HttpGet]
+        //[Route("brand/getall")]
+        //public async Task<ActionResult<ResponseDto>> GetAllBrands()
+        //{
+        //    ResponseDto response = new ResponseDto();
 
-            IEnumerable<Brand> brands = await catalogService.GetAllBrand();
+        //    IEnumerable<Brand> brands = await catalogService.GetAllBrand();
 
-            response.Data = mapper.Map<IEnumerable<BrandResDto>>(brands);
+        //    response.Data = mapper.Map<IEnumerable<BrandResDto>>(brands);
 
-            return Ok(response);
-        }
+        //    return Ok(response);
+        //}
 
         [HttpPost]
         [Route("brand/create")]
