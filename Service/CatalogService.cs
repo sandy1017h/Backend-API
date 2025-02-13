@@ -52,19 +52,35 @@ namespace server.Service
             var category = await this.categoryRepository.GetByIdAsync(inData.CategoryId);
             var brand = await this.brandRepository.GetByIdAsync(inData.BrandId);
 
-            if (category == null) { throw new Exception($"Invalid Category Id {inData.CategoryId}"); };
-            if (brand == null) { throw new Exception($"Invalid Brand Id {inData.BrandId}"); };
+            if (category == null) { throw new Exception($"Invalid Category Id {inData.CategoryId}"); }
+            if (brand == null) { throw new Exception($"Invalid Brand Id {inData.BrandId}"); }
 
             Image image = await this.imageService.SaveImageAsync(inData.Thumbnail);
 
-            Product newProduct = mapper.Map<Product>(inData);
+            Product newProduct = new Product
+            {
+                Name = inData.Name,
+                Description = inData.Description,
+                OriginalPrice = inData.OriginalPrice,
+                DiscountPercentage = inData.DiscountPercentage,
+                DiscountAmount = inData.DiscountAmount,
+                StockQuantity = inData.StockQuantity,
+                IsFeatured = inData.IsFeatured,
+                Category = category,
+                Brand = brand,
+                Thumbnail = image,
 
-            newProduct.Brand = brand;
-            newProduct.Category = category;
-            newProduct.Thumbnail = image;
+                // **New Fields**
+                Ram = inData.Ram,
+                Storage = inData.Storage,
+                Processor = inData.Processor,
+                Warranty = inData.Warranty,
+                BatteryCapacity = inData.BatteryCapacity
+            };
 
-           return await this.productRepository.AddAsync(newProduct);
+            return await this.productRepository.AddAsync(newProduct);
         }
+
 
         public async Task DeleteBrand(int brandId)
         {

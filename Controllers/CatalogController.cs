@@ -59,9 +59,11 @@ namespace server.Controllers
         [Route("product/create")]
         public async Task<ActionResult> CreateProducts(CreateProductReq newProduct)
         {
-            Product product= await catalogService.CreateProduct(newProduct);
-            ResponseDto response = new ResponseDto();
-            response.Data = product;
+            Product product = await catalogService.CreateProduct(newProduct);
+            ResponseDto response = new ResponseDto
+            {
+                Data = product
+            };
             return Ok(response);
         }
 

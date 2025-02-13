@@ -247,6 +247,10 @@ namespace server.Migrations
                     b.Property<double>("AverageRating")
                         .HasColumnType("float");
 
+                    b.Property<string>("BatteryCapacity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
 
@@ -289,14 +293,30 @@ namespace server.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("Processor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ram")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("StockQuantity")
                         .HasColumnType("int");
+
+                    b.Property<string>("Storage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ThumbnailId")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalReviews")
                         .HasColumnType("int");
+
+                    b.Property<string>("Warranty")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

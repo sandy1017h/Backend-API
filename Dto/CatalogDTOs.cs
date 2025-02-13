@@ -14,6 +14,11 @@ namespace server.Dto
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
         public IFormFile Thumbnail { get; set; }
+        public string Ram { get; set; }
+        public string Storage { get; set; }
+        public string Processor { get; set; }
+        public string Warranty { get; set; }
+        public string BatteryCapacity { get; set; }
     }
 
     public class CreateBrandReq
@@ -79,6 +84,11 @@ namespace server.Dto
 
         public BrandResDto Brand { get; set; }
         public ImageDtoRes? Thumbnail { get; set; }
+        public string Ram { get; set; }
+        public string Storage { get; set; }
+        public string Processor { get; set; }
+        public string Warranty { get; set; }
+        public string BatteryCapacity { get; set; }
     }
 
     public class ProductPagination:Pagination<Product>
