@@ -15,7 +15,7 @@ namespace server.Controllers
         private readonly ICatalogService catalogService;
         private readonly IMapper mapper;
 
-        public CatalogController(ICatalogService catalogService,IMapper mapper)
+        public CatalogController(ICatalogService catalogService, IMapper mapper)
         {
             this.catalogService = catalogService;
             this.mapper = mapper;
@@ -26,20 +26,20 @@ namespace server.Controllers
         {
             ResponseDto response = new ResponseDto();
 
-            ProductPagination res =await catalogService.GetAllProducts(req);
+            ProductPagination res = await catalogService.GetAllProducts(req);
 
             response.Data = new ProductPaginationRes()
             {
-                PageIndex=res.PageIndex,
-                PageSize=res.PageSize,
-                Data= mapper.Map<IReadOnlyList<ProductResDto>>(res.Data),
-                Count=res.Count,
-                MinPrice=res.MinPrice,
-                MaxPrice=res.MaxPrice,
+                PageIndex = res.PageIndex,
+                PageSize = res.PageSize,
+                Data = mapper.Map<IReadOnlyList<ProductResDto>>(res.Data),
+                Count = res.Count,
+                MinPrice = res.MinPrice,
+                MaxPrice = res.MaxPrice,
             };
-                
-                
-                
+
+
+
 
             return Ok(response);
         }
@@ -50,7 +50,7 @@ namespace server.Controllers
 
             Product? product = await catalogService.GetProductById(productId);
 
-            response.Data =mapper.Map<ProductResDto>(product);
+            response.Data = mapper.Map<ProductResDto>(product);
 
             return Ok(response);
         }
@@ -60,10 +60,8 @@ namespace server.Controllers
         public async Task<ActionResult> CreateProducts(CreateProductReq newProduct)
         {
             Product product = await catalogService.CreateProduct(newProduct);
-            ResponseDto response = new ResponseDto
-            {
-                Data = product
-            };
+            ResponseDto response = new ResponseDto();
+            response.Data = product;
             return Ok(response);
         }
 
@@ -79,18 +77,18 @@ namespace server.Controllers
 
 
         #region category api
-        //[HttpGet]
-        //[Route("category/getall")]
-        //public async Task<ActionResult<ResponseDto>> GetAllCategories()
-        //{
-        //    ResponseDto response = new ResponseDto();
+        [HttpGet]
+        [Route("category/getall")]
+        public async Task<ActionResult<ResponseDto>> GetAllCategories()
+        {
+            ResponseDto response = new ResponseDto();
 
-        //    IEnumerable<Category> categories = await catalogService.GetAllCategery();
+            IEnumerable<Category> categories = await catalogService.GetAllCategery();
 
-        //    response.Data =mapper.Map<IEnumerable<CategoryResDto>>(categories);
+            response.Data = mapper.Map<IEnumerable<CategoryResDto>>(categories);
 
-        //    return Ok(response);
-        //}
+            return Ok(response);
+        }
 
         [HttpPost]
         [Route("category/create")]
@@ -116,18 +114,18 @@ namespace server.Controllers
 
 
         #region Brand api
-        //[HttpGet]
-        //[Route("brand/getall")]
-        //public async Task<ActionResult<ResponseDto>> GetAllBrands()
-        //{
-        //    ResponseDto response = new ResponseDto();
+        [HttpGet]
+        [Route("brand/getall")]
+        public async Task<ActionResult<ResponseDto>> GetAllBrands()
+        {
+            ResponseDto response = new ResponseDto();
 
-        //    IEnumerable<Brand> brands = await catalogService.GetAllBrand();
+            IEnumerable<Brand> brands = await catalogService.GetAllBrand();
 
-        //    response.Data = mapper.Map<IEnumerable<BrandResDto>>(brands);
+            response.Data = mapper.Map<IEnumerable<BrandResDto>>(brands);
 
-        //    return Ok(response);
-        //}
+            return Ok(response);
+        }
 
         [HttpPost]
         [Route("brand/create")]

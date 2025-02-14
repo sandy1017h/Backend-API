@@ -146,6 +146,13 @@ namespace server.Controllers
                 res.Message = $"User with email {req.Email} already exsist";
                 return BadRequest(res);
             }
+            // Convert string to Enum
+            if (!Enum.TryParse(req.BusinessType, out BusinessTypes businessType))
+            {
+                res.IsSuccessed = false;
+                res.Message = "Invalid Business Type";
+                return BadRequest(res);
+            }
 
             User newUser = new User()
             {
@@ -153,7 +160,13 @@ namespace server.Controllers
                 Email = req.Email,
                 Address = req.Address,
                 Role=UserRoles.ADMIN.ToString(),
-                Password = BCrypt.Net.BCrypt.HashPassword(req.Password)
+                Password = BCrypt.Net.BCrypt.HashPassword(req.Password),
+                RefreshToken = "",
+                RefreshTokenExpire = DateTime.Now.AddDays(2),
+                BusinessName = req.BusinessName,
+                PhoneNumber = req.PhoneNumber,
+                BusinessType = businessType, // Assign Business Type
+                GSTNumber = req.GSTNumber
             };
             bool result = await this.userRepository.AddUser(newUser);
 
