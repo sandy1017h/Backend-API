@@ -136,7 +136,7 @@ namespace server.Controllers
         //register-admin
         [HttpPost]
         [Route("register-admin")]
-        public async Task<ActionResult<ResponseDto>> RegisterAdmin([FromBody] RegisterUserReqDto req)
+        public async Task<ActionResult<ResponseDto>> RegisterAdmin([FromBody] RegisterAdminDto req)
         {
             User? user = await this.userRepository.GetUserByEmail(req.Email);
             ResponseDto res = new ResponseDto();

@@ -11,12 +11,12 @@ namespace server.Dto
         public string PhoneNumber { get; set; }
 
         
-        public string BusinessName { get; set; }
+      /*  public string BusinessName { get; set; }
 
         
         public string BusinessType { get; set; }
 
        
-        public string GSTNumber { get; set; }
+        public string GSTNumber { get; set; }*/
     }
 }
