@@ -20,6 +20,8 @@ namespace server.Mapper
             CreateMap<Brand,BrandResDto>();
             CreateMap<Product,ProductResDto>();
             CreateMap<WishlistItem, WishListItemResDto>();
+            CreateMap<Brand, BrandResDto>()
+    .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.Image != null ? src.Image.Url : string.Empty));
 
             CreateMap<ShoppingCartItem, ShoppingCartItemResDto>();
             CreateMap<ShoppingCart, ShoppingCartResDto>();

@@ -122,6 +122,10 @@ namespace server.Controllers
 
             IEnumerable<Brand> brands = await catalogService.GetAllBrand();
 
+            foreach (var brand in brands)
+            {
+                Console.WriteLine($"Brand: {brand.Name}, Image URL: {brand.Image?.Url}");
+            }
             response.Data = mapper.Map<IEnumerable<BrandResDto>>(brands);
 
             return Ok(response);

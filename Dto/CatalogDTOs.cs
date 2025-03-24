@@ -62,7 +62,7 @@ namespace server.Dto
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ImageDtoRes? Image { get; set; }
+        public string ImageUrl { get; set; }
     }
     public class ProductResDto
     {
