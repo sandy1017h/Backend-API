@@ -75,7 +75,7 @@ namespace server.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("ImageId")
+                    b.Property<int>("ImageId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
@@ -94,10 +94,211 @@ namespace server.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ImageId")
-                        .IsUnique()
-                        .HasFilter("[ImageId] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("brands");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 1,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Samsung"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 2,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Apple"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 3,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Sony"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 4,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Dell"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 5,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Nike"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 6,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Adidas"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 7,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Puma"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 8,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Levi's"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 9,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "LG"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 10,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Whirlpool"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 11,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Philips"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 12,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Bosch"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 13,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Penguin Random House"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 14,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "HarperCollins"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 15,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Simon & Schuster"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 16,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Hachette"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 17,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Nestlé"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 18,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Amul"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 19,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Britannia"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageId = 20,
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Patanjali"
+                        });
                 });
 
             modelBuilder.Entity("server.Entities.Category", b =>
@@ -113,6 +314,10 @@ namespace server.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ImageId")
                         .HasColumnType("int");
@@ -137,34 +342,61 @@ namespace server.Migrations
                         .HasFilter("[ImageId] IS NOT NULL");
 
                     b.ToTable("categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Electronic gadgets and devices",
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Electronics"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Clothing and fashion accessories",
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Fashion"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Appliances for home use",
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Home Appliances"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Books from various genres",
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Books"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Daily essentials and groceries",
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Name = "Groceries"
+                        });
                 });
 
             modelBuilder.Entity("server.Entities.Image", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ImageName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageNameExt")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("images");
-                });
-
-            modelBuilder.Entity("server.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -187,12 +419,239 @@ namespace server.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("images");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://images.unsplash.com/photo-1662947995643-0007c2b5ebb6?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNhbXN1bmclMjBsb2dvfGVufDB8fDB8fHww"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://www.freeiconspng.com/thumbs/apple-logo-icon/blue-apple-logo-icon-0.png"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://cdn.freebiesupply.com/logos/large/2x/sony-logo-png-transparent.png"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://e7.pngegg.com/pngimages/255/673/png-clipart-dell-logo-illustration-dell-sonicwall-logo-dell-logo-blue-text-thumbnail.png"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://i.pinimg.com/736x/a7/15/be/a715beeaceeba3b6fdbcb29717032cc8.jpg"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://upload.wikimedia.org/wikipedia/commons/2/24/Adidas_logo.png"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://w7.pngwing.com/pngs/670/927/png-transparent-puma-logo-puma-logo-adidas-swoosh-brand-adidas-text-carnivoran-sneakers-thumbnail.png"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://w7.pngwing.com/pngs/581/271/png-transparent-levi%C2%B4s-store-frolunda-torg-levi-strauss-co-brand-sweater-levi-text-label-rectangle-thumbnail.png"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://w7.pngwing.com/pngs/675/344/png-transparent-lg-logo-lg-g5-lg-electronics-lg-corp-lg-logo-text-trademark-logo.png"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://example.com/brands/whirlpool.png"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://upload.wikimedia.org/wikipedia/commons/1/10/Whirlpool_Corporation_Logo.png"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://w7.pngwing.com/pngs/370/224/png-transparent-bosch-logo-thumbnail.png"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://preview.redd.it/q1tkmm77nza31.png?auto=webp&s=fd0fe1175193ec462c1625eb28b02cea8e5eaae4"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://www.liblogo.com/img-logo/ha1286h474-harpercollins-logo-harpercollins-javelin.png"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://logowik.com/content/uploads/images/simon-data6544.logowik.com.webp"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://upload.wikimedia.org/wikipedia/commons/5/5e/Hachette_India_logo.png"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://w7.pngwing.com/pngs/342/57/png-transparent-nestle-logo-nestle-logo-nestle-ghana-ltd-nestle-blue-angle-building-thumbnail.png"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://m.economictimes.com/thumb/msid-76233259,width-1200,height-900,resizemode-4,imgsize-672052/amul.jpg"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Britannia_Industries_logo_with_motto.svg/2560px-Britannia_Industries_logo_with_motto.svg.png"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CreatedBy = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 1,
+                            Url = "https://www.yogaiya.in/wp-content/uploads/2018/08/Patanjali-Yogpeeth.jpg"
+                        });
+                });
+
+            modelBuilder.Entity("server.Entities.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Status")
+                    b.Property<string>("PaymentId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RazorpayOrderId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShippingAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("decimal(18,2)");
@@ -201,8 +660,6 @@ namespace server.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Orders");
                 });
@@ -215,8 +672,28 @@ namespace server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -224,7 +701,7 @@ namespace server.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("UnitPrice")
+                    b.Property<decimal>("Subtotal")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -234,6 +711,79 @@ namespace server.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("OrderItems");
+                });
+
+            modelBuilder.Entity("server.Entities.Orders", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PaymentId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RazorpayOrderId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShippingAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductOrders");
+                });
+
+            modelBuilder.Entity("server.Entities.PaymentTransaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OrderId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PaymentTransactions");
                 });
 
             modelBuilder.Entity("server.Entities.Product", b =>
@@ -293,20 +843,8 @@ namespace server.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("Processor")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Ram")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("StockQuantity")
                         .HasColumnType("int");
-
-                    b.Property<string>("Storage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ThumbnailId")
                         .HasColumnType("int");
@@ -384,12 +922,27 @@ namespace server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Shopcarts");
                 });
@@ -402,20 +955,35 @@ namespace server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("ShoppingCartId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("CartId");
 
-                    b.HasIndex("ShoppingCartId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ShopcartItems");
                 });
@@ -518,7 +1086,8 @@ namespace server.Migrations
                     b.HasOne("server.Entities.Image", "Image")
                         .WithOne("Brand")
                         .HasForeignKey("server.Entities.Brand", "ImageId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Image");
                 });
@@ -528,20 +1097,9 @@ namespace server.Migrations
                     b.HasOne("server.Entities.Image", "Image")
                         .WithOne("Category")
                         .HasForeignKey("server.Entities.Category", "ImageId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Image");
-                });
-
-            modelBuilder.Entity("server.Entities.Order", b =>
-                {
-                    b.HasOne("server.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("server.Entities.OrderItem", b =>
@@ -580,7 +1138,7 @@ namespace server.Migrations
                     b.HasOne("server.Entities.Image", "Thumbnail")
                         .WithOne("Product")
                         .HasForeignKey("server.Entities.Product", "ThumbnailId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Brand");
 
@@ -608,34 +1166,23 @@ namespace server.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("server.Entities.ShoppingCart", b =>
+            modelBuilder.Entity("server.Entities.ShoppingCartItem", b =>
                 {
-                    b.HasOne("server.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
+                    b.HasOne("server.Entities.ShoppingCart", "Cart")
+                        .WithMany("Items")
+                        .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("server.Entities.ShoppingCartItem", b =>
-                {
                     b.HasOne("server.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("server.Entities.ShoppingCart", "ShoppingCart")
-                        .WithMany("ShoppingCartItems")
-                        .HasForeignKey("ShoppingCartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Cart");
 
                     b.Navigation("Product");
-
-                    b.Navigation("ShoppingCart");
                 });
 
             modelBuilder.Entity("server.Entities.Wishlist", b =>
@@ -692,7 +1239,7 @@ namespace server.Migrations
 
             modelBuilder.Entity("server.Entities.ShoppingCart", b =>
                 {
-                    b.Navigation("ShoppingCartItems");
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("server.Entities.Wishlist", b =>

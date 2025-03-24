@@ -9,7 +9,7 @@ namespace server.Service
         private readonly IWebHostEnvironment environment;
         private readonly IImageRepository imageRepository;
 
-        public ImageService(IWebHostEnvironment environment,IImageRepository imageRepository)
+        public ImageService(IWebHostEnvironment environment, IImageRepository imageRepository)
         {
             this.environment = environment;
             this.imageRepository = imageRepository;
@@ -17,48 +17,45 @@ namespace server.Service
         public async Task DeleteImageAsync(int Id)
         {
             Image? image = await imageRepository.GetByIdAsync(Id);
-            if (image == null) throw new ArgumentNullException($"No Image fount with id {Id}");
+            if (image == null) throw new ArgumentNullException($"No Image found with id {Id}");
             var contentPath = environment.ContentRootPath;
             var imagePath = Path.Combine(contentPath, "Uploads");
-            var fileNameWithPath = Path.Combine(imagePath, image.ImageUrl);
+            var fileNameWithPath = Path.Combine(imagePath, image.Url);
 
-            if (Directory.Exists(fileNameWithPath))
+            if (File.Exists(fileNameWithPath))
             {
-                Directory.Delete(fileNameWithPath);
+                File.Delete(fileNameWithPath);
             }
             await imageRepository.DeleteAsync(image);
         }
 
         public async Task<Image> SaveImageAsync(IFormFile file)
         {
-            if(file == null) throw new ArgumentNullException("File is empty");
+            if (file == null) throw new ArgumentNullException("File is empty");
 
             var contentPath = environment.ContentRootPath;
             var imagePath = Path.Combine(contentPath, "Uploads");
 
-            if (!Directory.Exists(imagePath)) 
+            if (!Directory.Exists(imagePath))
             {
                 Directory.CreateDirectory(imagePath);
             }
 
-            var imageName = file.FileName;
-            var imageExt = Path.GetExtension(imageName);
-            var fileName = $"{Guid.NewGuid().ToString()}{imageExt}";
-
+            var fileName = $"{Guid.NewGuid().ToString()}{Path.GetExtension(file.FileName)}";
             var fileNameWithPath = Path.Combine(imagePath, fileName);
 
             using var fileStream = new FileStream(fileNameWithPath, FileMode.Create);
-
             await file.CopyToAsync(fileStream);
 
             Image image = new Image()
             {
-                ImageUrl = fileName,
-                ImageName = imageName,
-                ImageNameExt = imageExt
+                Url = fileName,
+                CreatedDate = DateTime.UtcNow,
+                CreatedBy =1,
+                IsDeleted = false
             };
 
-             return await imageRepository.AddAsync(image);
+            return await imageRepository.AddAsync(image);
         }
     }
 }

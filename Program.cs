@@ -74,6 +74,7 @@ builder.Services.AddScoped<IImageService,ImageService>();
 builder.Services.AddScoped<ICatalogService, CatalogService>();
 builder.Services.AddScoped<IWishListService, WishListService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IRazorpayService, RazorpayService>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

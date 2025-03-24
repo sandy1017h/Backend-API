@@ -18,7 +18,7 @@ namespace server.Repository
             return await contex.ShopcartItems
                         .Include(x => x.Product)
                         .ThenInclude(x => x.Thumbnail)
-                        .Where(x => x.ShoppingCartId == cartId)
+                        .Where(x => x.Cart.Id == cartId)
                         .ToListAsync();
         }
     }

@@ -8,26 +8,60 @@ namespace server.Controllers
     [Route("api/[controller]")]
     public class CartItemController : ControllerBase
     {
-        private readonly ICartService cartService;
+        private readonly ICartService _cartService;
+
         public CartItemController(ICartService cartService)
         {
-            this.cartService = cartService;
-            
-        }
-        [HttpDelete("{userId}/{cartItemId}")]
-        public async Task<ActionResult<ResponseDto>> DeleteCartItem(int userId,int cartItemId)
-        {
-            ResponseDto responseDto = new ResponseDto();
-            await cartService.RemoveCartItem(userId,cartItemId);
-            return Ok(responseDto.success("Item removed successfully"));
+            _cartService = cartService;
         }
 
-        [HttpPost]
-        public async Task<ActionResult<ResponseDto>> UpdateCartItem([FromBody] UpdateCartItemRequest item)
+        [HttpPost("add")]
+        public async Task<IActionResult> AddToCart([FromBody] AddToCartDto request)
         {
-            ResponseDto responseDto = new ResponseDto();
-            await cartService.UpdateCartItem(item.UserId,item.CartItemId,item.Quantity);
-            return Ok(responseDto);
+            var result = await _cartService.AddToCart(request);
+            return Ok(result);
+        }
+
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateCartItem([FromBody] UpdateCartItemDto request)
+        {
+            var result = await _cartService.UpdateCartItemQuantity(request);
+            return Ok(result);
+        }
+
+        [HttpDelete("remove/{cartItemId}")]
+        public async Task<IActionResult> RemoveCartItem(int cartItemId)
+        {
+            var result = await _cartService.RemoveFromCart(cartItemId);
+            return Ok(result);
+        }
+
+        [HttpGet("user/{userId}")]
+        public async Task<IActionResult> GetUserCart(int userId)
+        {
+            var result = await _cartService.GetUserCartAsync(userId);
+            return Ok(result);
+        }
+
+        [HttpGet("count/{userId}")]
+        public async Task<IActionResult> GetCartItemCount(int userId)
+        {
+            var count = await _cartService.GetCartItemCountAsync(userId);
+            return Ok(count);
+        }
+
+        [HttpGet("total/{userId}")]
+        public async Task<IActionResult> GetCartTotal(int userId)
+        {
+            var total = await _cartService.GetCartTotalAsync(userId);
+            return Ok(total);
+        }
+
+        [HttpGet("empty/{userId}")]
+        public async Task<IActionResult> IsCartEmpty(int userId)
+        {
+            var isEmpty = await _cartService.IsCartEmptyAsync(userId);
+            return Ok(isEmpty);
         }
     }
 }

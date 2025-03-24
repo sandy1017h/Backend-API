@@ -62,9 +62,6 @@
         public int? ThumbnailId { get; set; }
         public Image? Thumbnail { get; set; }
 
-        public string Ram { get; set; }
-        public string Storage { get; set; }
-        public string Processor { get; set; }
         public string Warranty { get; set; }
         public string BatteryCapacity { get; set; }
     }

@@ -71,9 +71,7 @@ namespace server.Service
                 Thumbnail = image,
 
                 // **New Fields**
-                Ram = inData.Ram,
-                Storage = inData.Storage,
-                Processor = inData.Processor,
+              
                 Warranty = inData.Warranty,
                 BatteryCapacity = inData.BatteryCapacity
             };
