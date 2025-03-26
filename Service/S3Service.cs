@@ -13,9 +13,14 @@ public class S3Service
 
     public S3Service(IConfiguration configuration)
     {
-      
-        var credentials = FallbackCredentialsFactory.GetCredentials();
-        _s3Client = new AmazonS3Client(credentials, RegionEndpoint.GetBySystemName(configuration["AWS:Region"])); // Change region as needed
+
+        //var credentials = FallbackCredentialsFactory.GetCredentials();
+        //_s3Client = new AmazonS3Client(credentials, RegionEndpoint.GetBySystemName(configuration["AWS:Region"])); // Change region as needed
+        _s3Client = new AmazonS3Client(
+          configuration["AWS:AccessKey"],
+          configuration["AWS:SecretKey"],
+          RegionEndpoint.GetBySystemName(configuration["AWS:Region"])
+      );
 
         _bucketName = configuration["AWS:BucketName"];
     }

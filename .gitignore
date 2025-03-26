@@ -24,3 +24,4 @@ bin/
 /obj/project.nuget.cache
 /obj/server.csproj.nuget.dgspec.json
 /obj/server.csproj.nuget.g.props
+/appsettings.json
