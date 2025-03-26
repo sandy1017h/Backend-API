@@ -72,8 +72,7 @@ namespace server.Service
 
                 // **New Fields**
               
-                Warranty = inData.Warranty,
-                BatteryCapacity = inData.BatteryCapacity
+            
             };
 
             return await this.productRepository.AddAsync(newProduct);

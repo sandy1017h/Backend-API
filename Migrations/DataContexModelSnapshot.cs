@@ -797,10 +797,6 @@ namespace server.Migrations
                     b.Property<double>("AverageRating")
                         .HasColumnType("float");
 
-                    b.Property<string>("BatteryCapacity")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
 
@@ -851,10 +847,6 @@ namespace server.Migrations
 
                     b.Property<int>("TotalReviews")
                         .HasColumnType("int");
-
-                    b.Property<string>("Warranty")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
