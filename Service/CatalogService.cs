@@ -69,14 +69,20 @@ namespace server.Service
                 Category = category,
                 Brand = brand,
                 Thumbnail = image,
-
+                CreatedBy = inData.CreatedBy
                 // **New Fields**
-              
-            
+
+
             };
 
             return await this.productRepository.AddAsync(newProduct);
         }
+
+        public async Task<IEnumerable<Product>> GetProductsByUserId(int userId)
+{
+         return await productRepository.GetAllAsync();
+}
+
 
 
         public async Task DeleteBrand(int brandId)

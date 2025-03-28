@@ -9,7 +9,10 @@ namespace server.Interface.Service
         Task<ProductPagination> GetAllProducts(CatalogSpec inData);
         Task<Product?> GetProductById(int id);
         Task<Product> CreateProduct(CreateProductReq inData);
+        Task<IEnumerable<Product>> GetProductsByUserId(int userId);
         Task DeleteProduct(int productId);
+
+
   
 
         //Brand

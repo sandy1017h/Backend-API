@@ -57,13 +57,35 @@ namespace server.Controllers
 
         [HttpPost]
         [Route("product/create")]
-        public async Task<ActionResult> CreateProducts(CreateProductReq newProduct)
+        public async Task<ActionResult> CreateProducts( CreateProductReq newProduct)
         {
+            var userId = int.Parse(User.FindFirst("UserId")?.Value ?? "0");
+
+            if (newProduct.CreatedBy == 0)
+            {
+                newProduct.CreatedBy = userId;
+            }
+
             Product product = await catalogService.CreateProduct(newProduct);
+
+
             ResponseDto response = new ResponseDto();
             response.Data = product;
             return Ok(response);
         }
+
+
+
+        [HttpGet]
+        [Route("product/myprodcts/{userId}")] // Added "product/" to match Angular request
+        public async Task<ActionResult<ResponseDto>> GetMyProducts(int userId)
+        {
+            ResponseDto response = new ResponseDto();
+            var products = await catalogService.GetProductsByUserId(userId);
+            response.Data = mapper.Map<IEnumerable<ProductResDto>>(products);
+            return Ok(response);
+        }
+
 
 
         [HttpDelete]
@@ -74,6 +96,7 @@ namespace server.Controllers
             await catalogService.DeleteProduct(productId);
             return Ok(response);
         }
+
 
 
         #region category api

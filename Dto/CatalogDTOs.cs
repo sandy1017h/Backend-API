@@ -13,6 +13,7 @@ namespace server.Dto
         public bool IsFeatured { get; set; } = false;
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
+        public int CreatedBy { get; set; }
         public IFormFile Thumbnail { get; set; }
     
     }
